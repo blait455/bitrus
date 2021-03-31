@@ -31,3 +31,7 @@ Route::get('/contacts', 'ContactController@index')->name('contacts.index');
 Route::post('/contacts', 'ContactController@store')->name('contacts.store');
 Route::get('/contacts/{slug}/show', 'ContactController@show')->name('contact.show');
 Route::post('/contacts/{slug}/delete', 'ContactController@destroy')->name('contact.delete');
+
+Route::get('/newsletter', 'Admin\NewsletterController@index')->name('ns.index');
+Route::post('/newsletter', 'Admin\NewsletterController@store')->name('ns.store');
+Route::post('/newsletter/{id}/delete', 'Admin\NewsletterController@delete')->name('ns.delete');

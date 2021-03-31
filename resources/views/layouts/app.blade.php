@@ -77,6 +77,10 @@
                                         <a href="{{ route('contacts.index') }}" class="dropdown-item">Contact Management
                                         </a>
                                     @endcan
+                                    @can('manage-users')
+                                        <a href="{{ route('ns.index') }}" class="dropdown-item">Mail-list (Newsletter)
+                                        </a>
+                                    @endcan
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
