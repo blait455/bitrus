@@ -26,3 +26,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
     Route::resource('/courses','CoursesController');
     Route::resource('/blog','BlogController');
 });
+
+Route::get('/contacts', 'ContactController@index')->name('contacts.index');
+Route::post('/contacts', 'ContactController@store')->name('contacts.store');
+Route::get('/contacts/{slug}/show', 'ContactController@show')->name('contact.show');
+Route::post('/contacts/{slug}/delete', 'ContactController@destroy')->name('contact.delete');

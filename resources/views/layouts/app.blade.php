@@ -73,6 +73,10 @@
                                         <a href="{{ route('admin.blog.index') }}" class="dropdown-item">Blog Management
                                         </a>
                                     @endcan
+                                    @can('manage-users')
+                                        <a href="{{ route('contacts.index') }}" class="dropdown-item">Contact Management
+                                        </a>
+                                    @endcan
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
