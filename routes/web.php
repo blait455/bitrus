@@ -24,4 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function() {
     Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
     Route::resource('/courses','CoursesController');
+    Route::resource('/blog','BlogController');
 });
